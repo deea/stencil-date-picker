@@ -26,6 +26,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ionicons": "^4.6.3",
     "moment": "^2.24.0",
     "moment-range": "^4.0.2"
   }

@@ -1,12 +1,95 @@
-.month {
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  font-family: sans-serif;
+  color: #0a182f;
+  outline: 0;
+  max-width: 500px;
+}
+
+button {
+  outline: 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.todays-date {
+  border-bottom: solid 1px #e67b6c;
+  margin-bottom: 8px;
+}
+
+.todays-date h3 {
+  font-size: 30px;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+}
+
+.date-navigator button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.circle-big {
+  font-size: 25px;
+  color: #e67b6c;
+}
+
+.m-y-selector {
+  display: flex;
+  align-items: center;
+}
+
+.date-navigator {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 8px 0;
+}
+
+.days {
   display: flex;
   flex-wrap: wrap;
+  border: solid 1px #e67b6c;
+}
+
+.day-string {
+  width: calc(100% / 7);
+  border: none;
+  background-color: transparent;
+  margin-top: 8px;
+}
+
+.day-string p {
+  margin: 0;
+  color: lightslategray;
+  font-size: 16px
 }
 
 .day {
   width: calc(100% / 7);
+  padding: 5px;
+  border: none;
+  background-color: transparent;
 }
 
 .day.current {
-  color: red;
+  color: #e67b6c;
+}
+
+p {
+  margin: 0 5px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.to-date {
+  border: 2px solid #e67b6c;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 16px;
+  padding: 5px 16px;
 }
