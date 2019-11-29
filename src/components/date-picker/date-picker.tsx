@@ -98,7 +98,7 @@ export class DatePicker {
           <div class="days bottom">
             {daysInMonth.map(date => (
               <button
-                class={`day ${this.isSelectedDate(date) ? 'current' : ''}, ${this.isCurrentMonth(date) ? '' : 'different-month'}`}
+                class={`day ${this.isSelectedDate(date) ? 'current' : ''} ${this.isCurrentMonth(date) ? '' : 'different-month'}`}
                 onClick={() => this.selectDate(date)}
               >
                 {date.getDate()}
