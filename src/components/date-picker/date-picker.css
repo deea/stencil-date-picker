@@ -1,0 +1,12 @@
+.month {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: calc(100% / 7);
+}
+
+.day.current {
+  color: red;
+}
