@@ -1,7 +1,6 @@
 import { Component, State, h } from '@stencil/core';
 import moment from 'moment';
 import { getCalendarDays } from './days';
-import 'ionicons';
 
 @Component({
   tag: 'date-picker',
@@ -67,30 +66,32 @@ export class DatePicker {
 
     return (
       <div class='container'>
-        <div class='todays-date'>
+        <div class='selected-date'>
           <h3>{this.selectedDate.toDateString()}</h3>
         </div>
         <div>
-          <div class='date-navigator'>
-            <div class='m-y-selector'>
-              <button onClick={() => this.prevMonth()}><ion-icon name="arrow-dropleft-circle" class='circle-big'></ion-icon></button>
-              <span><p>Month: {monthYear.format('MMM')}</p></span>
-              <button onClick={() => this.nextMonth()}><ion-icon name="arrow-dropright-circle" class='circle-big'></ion-icon></button>
-            </div>
-            <div class='m-y-selector'>
-              <button onClick={() => this.prevYear()}><ion-icon name="arrow-dropleft-circle" class='circle-big'></ion-icon></button>
-              <span><p>Year: {this.year}</p></span>
-              <button onClick={() => this.nextYear()}><ion-icon name="arrow-dropright-circle" class='circle-big'></ion-icon></button>
-            </div>
+          <div class="date-navigator">
+            <m-y-picker
+              prev={() => this.prevMonth()}
+              next={() => this.nextMonth()}
+            >
+              Month: {monthYear.format('MMM')}
+            </m-y-picker>
+            <m-y-picker
+              prev={() => this.prevYear()}
+              next={() => this.nextYear()}
+            >
+              Year: {this.year}
+            </m-y-picker>
           </div>
-          <div class="days">
+          <div class="days top">
             {moment.weekdaysShort().map(weekday =>
-              <button class="day-string">
+              <button class="day-as-string">
                 <p>{weekday}</p>
               </button>
             )}
           </div>
-          <div class="days">
+          <div class="days bottom">
             {daysInMonth.map(date => (
               <button
                 class={`day ${this.isSelectedDate(date) ? 'current' : ''}`}
