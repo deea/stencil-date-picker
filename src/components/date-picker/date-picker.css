@@ -81,6 +81,10 @@ button {
   color: #e67b6c;
 }
 
+.day.different-month {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .to-date {
   border: 1px solid #e67b6c;
   border-radius: 6px;
